@@ -1,6 +1,6 @@
-# UWindVisualization
+# UWindVisualizer
 
-**UWindVisualization** is a terminal-based C++ simulation that visualizes airflow through urban environments using particles, flow fields, recirculation zones, and vortex streets. The simulation renders particles in real time using ASCII art, with colors representing wind speed.
+**UWindVisualizer** is a terminal-based C++ simulation that visualizes airflow through urban environments using particles, flow fields, recirculation zones, and vortex streets. The simulation renders particles in real time using ASCII art, with colors representing wind speed.
 
 This project blends computational fluid dynamics concepts with creative data visualization, built entirely from scratch without any game engines or third-party visualization libraries.
 
