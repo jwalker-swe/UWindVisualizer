@@ -1,27 +1,65 @@
 # UWindVisualizer
 
-**UWindVisualizer** is a terminal-based C++ simulation that visualizes airflow through urban environments using particles, flow fields, recirculation zones, and vortex streets. The simulation renders particles in real time using ASCII art, with colors representing wind speed.
+**UWindVisualizer** is a C++ CLI tool for understanding wind flow phenomena through hands-on visualization and experimentation.
 
 This project blends computational fluid dynamics concepts with creative data visualization, built entirely from scratch without any game engines or third-party visualization libraries.
 
-## Why I Built It
+## Overview
 
-While working as an FX Artist on *Ghostbusters: Frozen Empire*, I frequently had to simulate snowfall in windy urban environments. These simulations were often repetitive, computationally expensive, and required manual tweaking to get the right look shot-to-shot. I began thinking:
+UWindVisualizer breaks down complex airflow behavior into digestible, real-time ASCII animations. While ASCII rendering isn't the most detailed visualization method, it provides just enough information to clearly understand core fluid dynamics concepts in urban environments.
 
-> “What if there were a more physically accurate and reusable way to simulate wind behavior?”
+Using a 2D velocity grid and particle system, you can directly observe:
 
-This project is the result — an exploration of airflow around obstacles like buildings, recirculation bubbles, and Von Kármán vortex streets using a lightweight, code-first approach.
+- How recirculation zones form behind buildings
+- How vortex streets develop in the wake of obstacles
+- How wind patterns curve and interact with urban geometry
+- The relationship between particle behavior and underlying flow fields
 
-## What It Does
+## Purpose
 
-- Simulates wind flow through a 2D grid representing a cityscape
-- Supports buildings as obstacles that influence flow
-- Models key airflow phenomena:
-  - Flow fields
-  - Recirculation zones
-  - Vortex streets
-- Visualizes particles in real time using ASCII characters in the terminal
-- Colors particles based on wind velocity magnitude
+This tool serves as an educational instrument for understanding fluid dynamics fundamentals. While sophisticated production solvers automatically handle these phenomena through comprehensive fluid dynamics, they can feel like black boxes when you're trying to understand why certain patterns emerge. UWindVisualizer strips away the complexity to focus on core principles—making the invisible visible.
+
+## Learning Outcomes
+
+By implementing and experimenting with this tool, you can gain intuitive understanding of:
+
+- How velocity gradients create circulation patterns
+- Why certain building shapes generate stronger wake effects
+- How pressure differentials drive airflow around obstacles
+- The physics that drive complex wind simulations
+
+## Features
+
+- Real-time ASCII particle visualization
+- 2D velocity field simulation
+- Color-coded particles by speed
+- Interactive urban geometry setup
+- Lightweight and fast iteration
+
+## Technical Details
+
+### Architecture
+
+- Velocity Field: 2D grid-based velocity field using simple finite difference methods
+- Particle System: Thousands of advected particles for flow visualization
+- Boundary Conditions: No-slip conditions at building walls with velocity interpolation
+- Rendering: Real-time ASCII output with ANSI color codes for velocity magnitude
+
+### Key Components
+
+- VelocityField: Manages the underlying flow field and boundary conditions
+- ParticleSystem: Handles particle advection and lifecycle management
+- Renderer: ASCII visualization with color-coding based on local velocity
+- Geometry: Simple building placement and obstacle definition
+
+### Physics Implementation
+
+The simulation uses simplified Navier-Stokes equations focusing on:
+
+- Advection of velocity field
+- Pressure projection for incompressible flow
+- Vorticity enhancement for visual clarity
+- Simple turbulence modeling
 
 ## Technologies
 
